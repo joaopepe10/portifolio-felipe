@@ -2,46 +2,117 @@
     --cor-primaria: #1B1A55;
     --cor-secundaria: #9290C3;
     --cor-terciaria: #535C91;
+    --cor-destaque: #f7f7f7;
+    /* Cor de destaque para cards e separações */
 }
+
 
 body {
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--cor-secundaria);
     color: var(--cor-primaria);
-}
-
-.container {
-    margin-top: 20px;
-}
-
-.repo-header {
-    padding: 20px;
-    background-color: var(--cor-terciaria);
-    color: white;
-    border-bottom: 1px solid var(--cor-primaria);
-}
-
-.repo-info {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.repo-info img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.repo-tags .badge {
-    margin-right: 5px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
     color: var(--cor-primaria);
+    text-decoration: none;
 }
 
 a:hover {
     color: var(--cor-terciaria);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 1000px;
+    /* Largura máxima do container */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--cor-destaque);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container > div > img {
+    border-radius: 55%;
+}
+
+header {
+    display: flex;
+    align-items: end;
+}
+
+.repo-header {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1.2rem;
+    /* Tamanho da fonte do cabeçalho */
+    border-radius: 20px;
+    /* Borda arredondada superior */
+}
+
+
+.repo-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Espaçamento entre itens */
+}
+
+.repo-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.repo-info p {
+    font-size: 1rem;
+    /* Tamanho da fonte do texto */
+    line-height: 1.5;
+    /* Espaçamento entre linhas */
+}
+
+
+.repo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    /* Quebra as tags para a próxima linha se necessário */
+    gap: 5px;
+}
+
+.repo-tags .badge {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .repo-info {
+        padding: 10px;
+    }
+
+    .repo-info p {
+        font-size: 0.9rem;
+    }
 }
